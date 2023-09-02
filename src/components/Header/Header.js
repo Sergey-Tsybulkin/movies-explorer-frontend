@@ -18,7 +18,7 @@ function Header({ loggedIn }) {
             <Link to="/signup" className="header__button hover">
               Регистрация
             </Link>
-            <Link to="/signin" className="header__button hover">
+            <Link to="/signin" className="header__button header__button-in hover">
               Войти
             </Link>
           </div>

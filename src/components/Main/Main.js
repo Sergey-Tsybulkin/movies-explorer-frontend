@@ -10,7 +10,7 @@ function Main() {
     <main>
       <Promo />
       <AboutProject />
-      {/* <Techs /> */}
+      <Techs />
       <AboutMe />
       <Portfolio />
     </main>

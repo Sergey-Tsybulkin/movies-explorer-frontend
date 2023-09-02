@@ -40,11 +40,13 @@
 }
 
 
-.header__button-green {
-  color: #000;
-  background-color: #3ddc84;
+.header__button-in {
   min-width: 76px;
   border-radius: 3px;
+  color: #000;
+  background-color: #3ddc84;
+  display: grid;
+  text-align: center;
 }
 
 .header__account {
