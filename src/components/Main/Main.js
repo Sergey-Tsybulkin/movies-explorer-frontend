@@ -1,10 +1,20 @@
 import React from "react";
-import "./Main";
+import Promo from "../Promo/Promo";
+import AboutProject from "../AboutProject/AboutProject";
+import Techs from "../Techs/Techs";
+import AboutMe from "../AboutMe/AboutMe";
+import Portfolio from "../Portfolio/Portfolio";
 
 function Main() {
-  return <header className="main">
-    <div className="main__content">12</div>
-  </header>
+  return (
+    <main>
+      <Promo />
+      <AboutProject />
+      {/* <Techs /> */}
+      <AboutMe />
+      <Portfolio />
+    </main>
+  );
 }
 
-export default Main
+export default Main;
