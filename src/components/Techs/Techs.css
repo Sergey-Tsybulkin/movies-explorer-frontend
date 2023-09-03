@@ -11,11 +11,11 @@
   padding: 100px 0 22px;
   margin: 0;
   border-bottom: 1px solid #DADADA;
-font-size: 22px;
-font-weight: 400;
-line-height: 27px;
-letter-spacing: -0.04em;
-text-align: left;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+  text-align: left;
 
 }
 
@@ -77,46 +77,46 @@ text-align: left;
 
 @media screen and (max-width: 1024px) {
   .techs__title {
-      margin: 79px auto 23px;
+    margin: 79px auto 23px;
   }
 
   .techs__description {
-      font-size: 12px;
-      line-height: 18px;
-      margin: 0 auto 83px;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 auto 83px;
   }
 
   .techs__list {
-      margin: 0 60px 89px;
-      grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
+    margin: 0 60px 89px;
+    grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
   }
 
   .techs__item {
-      font-size: 12px;
-      line-height: 14.52px;
+    font-size: 12px;
+    line-height: 14.52px;
   }
 }
 
 @media screen and (max-width: 540px) {
   .techs__title {
-      max-width: 292px;
-      font-size: 30px;
-      font-weight: 400;
-      line-height: 36.31px;
-      margin: 60px auto 24px;
+    max-width: 292px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36.31px;
+    margin: 60px auto 24px;
   }
 
   .techs__description {
-      max-width: 292px;
-      font-size: 11px;
-      line-height: 16px;
-      margin: 0 auto 50px;
+    max-width: 292px;
+    font-size: 11px;
+    line-height: 16px;
+    margin: 0 auto 50px;
   }
 }
 
 @media screen and (max-width: 360px) {
   .techs__list {
-      grid-template-columns: repeat(auto-fit, 84px);
-      margin: 0 auto 70px;
+    grid-template-columns: repeat(auto-fit, 84px);
+    margin: 0 auto 70px;
   }
 }
