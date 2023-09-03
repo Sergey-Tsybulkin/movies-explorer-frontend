@@ -4,7 +4,6 @@ import "./Header.css";
 
 import logo from "../../images/logo.svg";
 import account from "../../images/profile.svg";
-import menu from "../../images/button-menu.svg";
 
 function Header({ loggedIn }) {
   return (
