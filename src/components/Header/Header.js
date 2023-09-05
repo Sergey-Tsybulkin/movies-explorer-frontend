@@ -9,7 +9,7 @@ function Header({ loggedIn }) {
   return (
     <>
       {!loggedIn ? (
-        <header className="header" id="header">
+        <header className="header header__landing-color" id="header">
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип сайта" />
           </Link>

@@ -84,23 +84,6 @@
 }
 
 
-
-/* .profile-button__edit {
-margin-top: 204px;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0px;
-  text-align: center;
-  
-  border: none;
-  color: #000;
-  background-color: white;
-  cursor: pointer;
-
-  transition: opacity 0.7s ease-out;
-} */
-
 .profile-button__edit {
   margin-top: 204px;
   min-height: 16px;

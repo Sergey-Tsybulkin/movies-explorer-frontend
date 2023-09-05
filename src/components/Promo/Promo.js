@@ -1,5 +1,5 @@
 import React from "react";
-import NavTab from "../NavTab/NavTab";
+// import NavTab from "../NavTab/NavTab";
 import "./Promo.css";
 
 function Promo() {
@@ -9,7 +9,8 @@ function Promo() {
         <h1 className="promo__title">
           Учебный проект студента факультета Веб-разработки.
         </h1>
-        <NavTab />
+        <div className="promo__landing-logo"></div>
+        {/* <NavTab /> */}
       </div>
     </section>
   );

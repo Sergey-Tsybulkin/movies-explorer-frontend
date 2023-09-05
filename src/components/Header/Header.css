@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.header__landing-color {
+  background-color: #073042;
+}
+
 .header__container_sign {
   align-items: end;
   display: flex;
