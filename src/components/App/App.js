@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Routes, Route, useLocation } from "react-router-dom"
 import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -10,34 +10,24 @@ import Profile from '../Profile/Profile';
 
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Movies from '../Movies/Movies';
+import SavedMovies from "../SavedMovies/SavedMovies"
 
 function App() {
   return (
     <div className="page">
-      <section className="page__content">
-        <Switch>
-          <Route path="/" exact>
-            <Header />
-            <Main />
-            <Footer />
-          </Route>
-          <Route path="/signup">
-            <Header />
-            <Register />
-            <Footer />
-          </Route>
-          <Route path="/signin">
-            <Header />
-            <Login />
-            <Footer />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-        </Switch>
-        <PageNotFound />
-        <Movies />
-      </section>
+      <div className="page__content">
+        { <Header />}
+        <Routes>
+          <Route path="/signup" element={<Register />} />
+          <Route path="/signin" element={<Login />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/saved-movies" element={<SavedMovies />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+        { <Footer />}
+      </div>
     </div>
   );
 }
