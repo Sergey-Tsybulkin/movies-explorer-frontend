@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="page">
       <div className="page__content">
-        { <Header />}
+        <Header />
         <Routes>
           <Route path="/signup" element={<Register />} />
           <Route path="/signin" element={<Login />} />
@@ -26,7 +26,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        { <Footer />}
+        <Footer />
       </div>
     </div>
   );

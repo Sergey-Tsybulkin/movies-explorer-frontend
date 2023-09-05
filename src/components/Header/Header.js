@@ -13,7 +13,7 @@ function Header({ loggedIn }) {
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип сайта" />
           </Link>
-          <div className="header__container_sign">
+          <div className="header__container-sign">
             <Link to="/signup" className="header__button hover">
               Регистрация
             </Link>
@@ -43,8 +43,8 @@ function Header({ loggedIn }) {
               Сохранённые фильмы
             </NavLink>
           </div>
-          <div className="header__container">
-            <Link to="/profile" className="header__account hover">
+          <div className="header__container-account hover">
+            <Link to="/profile" className="header__account-button">
               <img src={account} alt="Аккаунт" />
             </Link>
           </div>
