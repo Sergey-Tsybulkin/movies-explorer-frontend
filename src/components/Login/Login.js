@@ -11,29 +11,30 @@ function Login() {
       linkText=" Регистрация"
       link="/signup"
     >
-      <label className="form__field">
+      <label className="register-login-form__field">
         E-mail
         <input
           name="email"
-          className="form__input"
+          className="register-login-form__input"
           id="email-input"
           type="email"
           placeholder="E-mail"
           required
         />
-        <span className="form__input-error">{}</span>
+        <span className="register-login-form__input-error">{}</span>
       </label>
-      <label className="form__field">
+      <label className="register-login-form__field">
         Пароль
         <input
           name="password"
-          className="form__input"
+          className="register-login-form__input"
           id="password-input"
           type="password"
           placeholder="Пароль"
           required
         />
-        <span className="form__input-error">{}</span>
+        <span className="register-login-form__input-error">{}</span>
+        <div className="login-form__space"></div>
       </label>
     </RegisterLoginForm>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useLocation } from "react-router-dom"
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -7,16 +7,20 @@ import Footer from '../Footer/Footer';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Profile from '../Profile/Profile';
-
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Movies from '../Movies/Movies';
-import SavedMovies from "../SavedMovies/SavedMovies"
+import SavedMovies from '../SavedMovies/SavedMovies';
 
 function App() {
+  const location = useLocation();
+  const checkHeaderFooter = () => {
+    const { pathname } = location;
+    return pathname === '/';
+  };
   return (
     <div className="page">
       <div className="page__content">
-        <Header />
+        {checkHeaderFooter() && <Header />}
         <Routes>
           <Route path="/signup" element={<Register />} />
           <Route path="/signin" element={<Login />} />
@@ -26,7 +30,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        <Footer />
+        {checkHeaderFooter() && <Footer />}
       </div>
     </div>
   );

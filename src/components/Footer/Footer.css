@@ -19,10 +19,12 @@
 }
 
 .footer__container {
+  padding-top: 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  
 }
 
 .footer__info__author {

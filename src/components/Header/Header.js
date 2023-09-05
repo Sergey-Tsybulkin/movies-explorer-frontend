@@ -1,14 +1,43 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import "./Header.css";
+import React from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import './Header.css';
 
-import logo from "../../images/logo.svg";
-import account from "../../images/profile.svg";
+import logo from '../../images/logo.svg';
+import account from '../../images/profile.svg';
+import SearchForm from '../SearchForm/SearchForm';
+import burgerButton from '../../images/button-menu.svg';
 
-function Header({ loggedIn }) {
+function Header() {
+  const location = useLocation();
+
+  const [isClicked, setIsClicked] = React.useState(false);
+
+  function handleOpen() {
+    setIsClicked(true);
+  }
+
+  function handleClose() {
+    setIsClicked(false);
+  }
+
+  const isNotLogged = () => {
+    const { pathname } = location;
+    return pathname === '/';
+  };
+
+  const isLogged = () => {
+    const { pathname } = location;
+
+    return (
+      pathname === '/profile' ||
+      pathname === '/movies' ||
+      pathname === '/saved-movies'
+    );
+  };
+
   return (
     <>
-      {!loggedIn ? (
+      {isNotLogged() && (
         <header className="header header__landing-color" id="header">
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип сайта" />
@@ -17,37 +46,45 @@ function Header({ loggedIn }) {
             <Link to="/signup" className="header__button hover">
               Регистрация
             </Link>
-            <Link to="/signin" className="header__button header__button-in hover">
+            <Link
+              to="/signin"
+              className="header__button header__button-in hover"
+            >
               Войти
             </Link>
           </div>
         </header>
-      ) : (
+      )}
+      {isLogged() && (
         <header className="header" id="header">
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип" />
           </Link>
           <div className="header__container_movies">
-            <NavLink
-              to="/movies"
-              className="header__button hover"
-              activeClassName="header__button_active"
-            >
+            <NavLink to="/movies" className="header__button hover">
               Фильмы
             </NavLink>
-            <NavLink
-              to="/saved-movies"
-              className="header__button hover"
-              activeClassName="header__button_active"
-            >
+            <NavLink to="/saved-movies" className="header__button hover">
               Сохранённые фильмы
             </NavLink>
           </div>
           <div className="header__container-account hover">
             <Link to="/profile" className="header__account-button">
-              <img src={account} alt="Аккаунт" />
+              <img
+                src={account}
+                className="header__account-image"
+                alt="Кнопка входа в аккаунт"
+              />
             </Link>
+            <button
+              className="header__button-menu"
+              onClick={handleOpen}
+              type="button"
+            >
+              <img src={burgerButton} alt="Кнопка меню" />
+            </button>
           </div>
+          {isClicked ? <SearchForm handleClose={handleClose} /> : ''}
         </header>
       )}
     </>

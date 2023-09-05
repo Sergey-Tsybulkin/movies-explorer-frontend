@@ -8,7 +8,7 @@ function AboutMe() {
       <h2 className="about-me__title">Студент</h2>
       <div className="about-me__container">
         <div className="about-me__content">
-          <h3 className="about-me__large-title">Сергей</h3>
+          <h3 className="about-me__student-name">Сергей</h3>
           <p className="about-me__info">Фронтенд-разработчик, 34 года</p>
           <p className="about-me__description">
             Живу и работаю в Москве, закончил Омскую академию МВД России. Я
@@ -18,7 +18,7 @@ function AboutMe() {
           </p>
           <a
             href="https://github.com/Sergey-Tsybulkin"
-            className="about-me__link"
+            className="about-me__link hover"
             target="_blank"
             rel="noreferrer"
           >

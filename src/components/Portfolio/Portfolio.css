@@ -1,7 +1,7 @@
 .portfolio {
   margin: 0;
-  padding: 0;
-  display: flex;
+  padding: 0 0 105px 0;
+    display: flex;
   flex-direction: column;
   align-items: stretch;
 
@@ -14,7 +14,6 @@ font-size: 18px;
 font-weight: 400;
 line-height: 20px;
 letter-spacing: 0px;
-text-align: left;
 
 color: #8B8B8B
 }
@@ -37,7 +36,7 @@ color: #8B8B8B
   font-weight: 400;
   line-height: 50px;
   letter-spacing: -0.04em;
-  text-align: left;
+  
   
   text-decoration: none;
   color: white;

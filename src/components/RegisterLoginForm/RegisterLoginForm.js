@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import './RegisterLoginForm.css';
 
-
 function RegisterLoginForm({
   children,
   title,
@@ -21,7 +20,12 @@ function RegisterLoginForm({
         <img src={logo} alt="Лого" />
       </Link>
       <h3 className="register-login-form__title">{title}</h3>
-      <form className="register-login-form" id="register-login-form" onSubmit={onSubmit} noValidate>
+      <form
+        className="register-login-form"
+        id="register-login-form"
+        onSubmit={onSubmit}
+        noValidate
+      >
         {children}
         <button
           type="submit"

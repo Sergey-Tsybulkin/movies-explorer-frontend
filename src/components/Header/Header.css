@@ -10,6 +10,12 @@
   background-color: #073042;
 }
 
+.header__logo {
+  width: 38px;
+  height: 38px;
+  display: block;
+}
+
 .header__container-sign {
   align-items: end;
   display: flex;
@@ -25,23 +31,18 @@
 
 .header__button {
   min-height: 32px;
-  font-style: normal;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 16px;
-  letter-spacing: 0px;
-  text-align: right;
-  
   display: flex;
   align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
   color: #fff;
   text-decoration: none;
   transition: opacity 0.7s ease-out;
 }
 
-.header__button_active {
-  color: #3ddc84;
-}
+
 
 
 .header__button-in {
@@ -54,19 +55,28 @@
 }
 
 .header__container-account {
-  align-self: end;
   margin-left: auto;
   transition: opacity 0.7s ease-out;
+width: 114px;
+height: 54px;
+}
+
+.header__account-image {
 
 }
 
-
-.header__account-button {
+/* .header__account-button {
+  margin-left: auto;
   width: 100px;
   height: 32px;
 
-}
+} */
 
+
+
+.header__button-menu {
+  display: none;
+}
 
 
 

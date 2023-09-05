@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 function Profile() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <section className="profile">
         <h2 className="profile__title">Привет, Сергей!</h2>
         <form id="form" className="profile__form" noValidate>

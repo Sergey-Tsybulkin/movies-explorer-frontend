@@ -11,11 +11,11 @@ function Register() {
       linkText=" Войти"
       link="/signin"
     >
-      <label className="form__field">
+      <label className="register-login-form__field">
         Имя
         <input
           name="name"
-          className="form__input"
+          className="register-login-form__input"
           id="name-input"
           type="text"
           placeholder="Введите имя"
@@ -23,31 +23,31 @@ function Register() {
           maxLength="40"
           required
         />
-        <span className="form__input-error">{}</span>
+        <span className="register-login-form__input-error">{}</span>
       </label>
-      <label className="form__field">
+      <label className="register-login-form__field">
         E-mail
         <input
           name="email"
-          className="form__input"
+          className="register-login-form__input"
           id="email-input"
           type="email"
           placeholder="Введите email"
           required
         />
-        <span className="form__input-error">{}</span>
+        <span className="register-login-form__input-error">{}</span>
       </label>
-      <label className="form__field">
+      <label className="register-login-form__field">
         Пароль
         <input
           name="password"
-          className="form__input"
+          className="register-login-form__input"
           id="password-input"
           type="password"
           placeholder="Введите пароль"
           required
         />
-        <span className="form__input-error">{}</span>
+        <span className="register-login-form__input-error">{}</span>
       </label>
     </RegisterLoginForm>
   );
