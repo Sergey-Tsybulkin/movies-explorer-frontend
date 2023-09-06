@@ -4,7 +4,7 @@ import './Header.css';
 
 import logo from '../../images/logo.svg';
 import account from '../../images/profile.svg';
-import SearchForm from '../SearchForm/SearchForm';
+import NavigationPanel from '../NavigationPanel/NavigationPanel';
 import burgerButton from '../../images/button-menu.svg';
 
 function Header() {
@@ -84,7 +84,7 @@ function Header() {
               <img src={burgerButton} alt="Кнопка меню" />
             </button>
           </div>
-          {isClicked ? <SearchForm handleClose={handleClose} /> : ''}
+          {isClicked ? <NavigationPanel handleClose={handleClose} /> : ''}
         </header>
       )}
     </>

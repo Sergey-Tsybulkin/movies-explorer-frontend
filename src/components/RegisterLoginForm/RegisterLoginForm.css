@@ -161,10 +161,14 @@ margin-top: 69px;
 }
 
 
+@media screen and (max-width: 860px) {
+  .register-login-form__container {
+    padding: 232px 0;
+  }
+}
 
 
-
-@media screen and (max-width: 1023px) {
+/* @media screen and (max-width: 1023px) {
   .form__container {
     padding-top: 232px;
     padding-bottom: 232px;
@@ -184,14 +188,12 @@ margin-top: 69px;
   }
 
   .form {
-    /* min-height: 310px; */
     min-height: 468px;
   }
 
   .form__button-save {
     font-size: 12px;
     line-height: 15px;
-    /* margin-top: 80px; */
   }
 
   .form__text {
@@ -204,4 +206,4 @@ margin-top: 69px;
     font-size: 12px;
     line-height: 15px;
   }
-}
+} */

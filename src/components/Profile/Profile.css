@@ -121,12 +121,23 @@
 
 }
 
+@media screen and (max-width:860px) {
+.profile {
+  padding: 226px 0 267px;
+}
+
+.profile__title {
+  margin-bottom: 97px;
+}
+.profile-button__edit {
+  margin-top: 176px;
+}
+}
 
 
 
 
-
-
+/* 
 @media screen and (max-width: 1023px) {
   .profile {
     padding-top: 236px;
@@ -165,4 +176,4 @@
     font-size: 12px;
     line-height: 15px;
   }
-}
+} */

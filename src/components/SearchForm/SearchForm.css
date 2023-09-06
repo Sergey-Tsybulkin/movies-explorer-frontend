@@ -47,7 +47,6 @@
   width: 80px;
   height: 34px;
   
-  border-radius: 4px;
   cursor: pointer;
   background-position: right;
   background-repeat: no-repeat;
@@ -72,6 +71,23 @@ align-self: center;
 height: 40px;
 
 }
+
+@media screen and (max-width:860px) {
+  .search-form {
+    margin: 0 13px 10px 29px;
+  }
+  .search-form__container {
+    padding-right: 20px;
+    gap: 18px;
+    margin-bottom: 110px;
+  }
+
+
+  .search-form__button {
+width: 100px;
+  }
+}
+
 
 
 @media screen and (max-width: 540px) {

@@ -40,8 +40,22 @@
   transition: opacity 0.7s ease-out;
 }
 
+@media screen and (max-width: 860px) {
+  .not-found {
+    min-height: 1024px;
+  }
+
+  .not-found__title {
+    margin-top: 406px;
+  }
+
+  .not-found__button {
+    margin-bottom: 222px;
+  }
+}
 
 
+/* 
 @media screen and (max-width: 1024px) {
   .not-found__title {
       margin: 185px 0 0;
@@ -70,4 +84,4 @@
       margin: 275px 0 0;
       font-size: 12px;
   }
-}
+} */

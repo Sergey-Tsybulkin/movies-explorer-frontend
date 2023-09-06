@@ -57,22 +57,9 @@
 .header__container-account {
   margin-left: auto;
   transition: opacity 0.7s ease-out;
-width: 114px;
-height: 54px;
+  width: 114px;
+  height: 54px;
 }
-
-.header__account-image {
-
-}
-
-/* .header__account-button {
-  margin-left: auto;
-  width: 100px;
-  height: 32px;
-
-} */
-
-
 
 .header__button-menu {
   display: none;
@@ -81,26 +68,46 @@ height: 54px;
 
 
 
+@media screen and (max-width:860px) {
 
 
-
-@media screen and (max-width: 1023px) {
   .header {
-    padding: 0 30px;
+    padding: 0 13px 10px 30px;
   }
 
-  .header__button-container_films {
-    display: none;
+  .header__button {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0px;
+
   }
 
   .header__account-button {
     display: none;
   }
 
-  .header__menu-button {
+  .header__container_movies {
+    display: none;
+  }
+
+  .header__container-account {
+    width: 44px;
+    height: 44px;
+  }
+
+  .header__button-menu {
+    padding: 0;
+    margin: 0;
     display: flex;
+    background-color: transparent;
+    border: none;
+    align-items: center;
   }
 }
+
+
+
 
 @media screen and (max-width: 576px) {
   .header {

@@ -36,18 +36,8 @@
 
 
 
-@media screen and (max-width: 1180px) {
-  .cards__list {
-    grid-template-columns: repeat(3, 270px);
-  }
-}
+@media screen and (max-width:860px) {
 
-@media screen and (max-width: 1023px) {
-  .cards__list {
-    padding: 70px 30px 30px;
-    grid-template-columns: repeat(2, 339px);
-    gap: 36px 30px;
-  }
 }
 
 @media screen and (max-width: 800px) {
