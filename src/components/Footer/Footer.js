@@ -1,15 +1,15 @@
-import React from "react";
-import "./Footer.css";
+import React from 'react';
+import './Footer.css';
 
-function Footer () {
+function Footer() {
   return (
-      <footer className='footer'>
-          <p className='footer__description'>
-              Учебный проект Яндекс.Практикум х BeatFilm.
-          </p>
-          <div className='footer__container'>
-              <p className='footer__info__author'>© {new Date().getFullYear()}</p>
-              <a
+    <footer className="footer">
+      <p className="footer__description">
+        Учебный проект Яндекс.Практикум х BeatFilm.
+      </p>
+      <div className="footer__container">
+        <p className="footer__info__year">© {new Date().getFullYear()}</p>
+        <a
           href="https://practicum.yandex.ru"
           className="footer__link"
           target="_blank"
@@ -25,9 +25,9 @@ function Footer () {
         >
           Github
         </a>
-          </div>
-      </footer>
+      </div>
+    </footer>
   );
-};
+}
 
 export default Footer;

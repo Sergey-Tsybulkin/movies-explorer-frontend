@@ -5,7 +5,6 @@
   flex-direction: column;
   max-width: 410px;
   box-sizing: border-box;
-  align-items: space-between;
 }
 
 .profile__title {
@@ -15,9 +14,7 @@
   font-weight: 500;
   line-height: 29px;
   letter-spacing: 0em;
-  
   text-align: center;
-  
 }
 
 .profile__form {
@@ -44,10 +41,7 @@
 
 .profile__label:first-child {
   border-bottom: 1px solid #424242;
-
 }
-
-
 
 .profile__input {
   margin: 0;
@@ -62,7 +56,6 @@
   outline: none;
   background-color: transparent;
   color: white;
-  
 }
 
 .profile__input::placeholder {
@@ -81,9 +74,7 @@
   position: absolute;
   top: 15px;
   right: 0;
-  
 }
-
 
 .profile-button__edit {
   margin-top: 186px;
@@ -94,68 +85,48 @@
   letter-spacing: 0px;
   text-align: center;
   background-color: transparent;
-
   color: #fff;
   border: none;
-
   cursor: pointer;
   transition: opacity 0.7s ease-out;
-
 }
 
 .profile-button__signout {
   min-height: 16px;
-
   font-size: 13px;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 0px;
   text-align: center;
   background-color: transparent;
-
   color: #EE3465;
   border: none;
   background-color: transparent;
   cursor: pointer;
   transition: opacity 0.7s ease-out;
-
 }
 
 @media screen and (max-width:860px) {
-.profile {
-  padding: 226px 0 267px;
-}
-
-.profile__title {
-  margin-bottom: 97px;
-}
-.profile-button__edit {
-  margin-top: 176px;
-}
-}
-
-
-
-
-/* 
-@media screen and (max-width: 1023px) {
   .profile {
-    padding-top: 236px;
-    padding-bottom: 269px;
+    padding: 226px 0 267px;
   }
 
   .profile__title {
-    margin-bottom: 96px;
+    margin-bottom: 97px;
   }
 
-  .profile__button-save {
-    margin-top: 193px;
+  .profile-button__edit {
+    margin-top: 176px;
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 540px) {
   .profile {
     padding: 70px 30px 40px 30px;
+  }
+
+  .profile__form {
+    gap: 18px;
   }
 
   .profile__title {
@@ -163,17 +134,21 @@
   }
 
   .profile__input {
-    width: 150px;
+    width: 140px;
   }
 
-  .profile__button-save {
-    margin-top: 362px;
+  .profile-button__edit {
+    margin-top: 342px;
     font-size: 12px;
+    font-weight: 400;
     line-height: 15px;
+    letter-spacing: 0px;
   }
 
-  .profile__logout {
+  .profile-button__signout {
     font-size: 12px;
+    font-weight: 500;
     line-height: 15px;
+    letter-spacing: 0px;
   }
-} */
+}

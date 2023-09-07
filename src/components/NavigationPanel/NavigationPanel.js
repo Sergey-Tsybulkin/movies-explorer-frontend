@@ -12,7 +12,6 @@ function NavigationPanel({ handleClose }) {
           className="navigation-panel__button-close hover"
           type="button"
           onClick={handleClose}
-          
         ></button>
         <nav className="navigation-panel__links">
           <NavLink exact to="/" className="navigation-panel__link hover">
@@ -26,7 +25,11 @@ function NavigationPanel({ handleClose }) {
           </NavLink>
         </nav>
         <Link to="/profile" className="navigation-panel__account-button hover">
-          <img src={account} className='navigation-panel__account-image' alt="Кнопка аккаунта" />
+          <img
+            src={account}
+            className="navigation-panel__account-image"
+            alt="Кнопка аккаунта"
+          />
         </Link>
       </div>
     </div>

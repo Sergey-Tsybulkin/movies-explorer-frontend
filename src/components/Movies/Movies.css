@@ -1,13 +1,5 @@
 .movies {
   display: flex;
   flex-direction: column;
-min-height: 100vh;
-}
-
-@media screen and (max-width: 860px) {
-
-}
-
-@media screen and (max-width: 540px) {
-
+  min-height: 100vh;
 }

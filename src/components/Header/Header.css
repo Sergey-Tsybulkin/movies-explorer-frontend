@@ -19,6 +19,7 @@
 .header__container-sign {
   align-items: end;
   display: flex;
+  justify-content: flex-end;
   gap: 30px;
   margin-left: auto;
 }
@@ -42,9 +43,6 @@
   transition: opacity 0.7s ease-out;
 }
 
-
-
-
 .header__button-in {
   min-width: 76px;
   border-radius: 3px;
@@ -65,14 +63,9 @@
   display: none;
 }
 
-
-
-
 @media screen and (max-width:860px) {
-
-
   .header {
-    padding: 0 13px 10px 30px;
+    padding: 0 30px 10px 30px;
   }
 
   .header__button {
@@ -80,7 +73,6 @@
     font-weight: 500;
     line-height: 16px;
     letter-spacing: 0px;
-
   }
 
   .header__account-button {
@@ -106,25 +98,32 @@
   }
 }
 
-
-
-
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 540px) {
   .header {
     padding: 0 14px;
   }
 
-  .header__button-container {
-    gap: 14px;
+  .header__container-sign {
+    height: 26px;
+    width: 54px;
+    margin-left: auto;
+    gap: 24px;
   }
 
   .header__button {
+    min-width: 54px;
     min-height: 26px;
     font-size: 10px;
     line-height: 16px;
   }
 
-  .header__button-black {
-    min-width: 54px;
+  .header__button-menu {
+    padding-left: 5px;
+    height: 40px;
+    width: 43px;
+  }
+
+  .header__button-menu_image {
+    width: 37px;
   }
 }

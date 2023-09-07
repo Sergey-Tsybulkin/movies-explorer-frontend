@@ -9,7 +9,7 @@ function Portfolio() {
         <a
           href="https://Sergey-Tsybulkin.github.io/how-to-learn"
           target="_blank"
-          rel='noreferrer'
+          rel="noreferrer"
           className="portfolio__link hover"
         >
           Статичный сайт
@@ -18,7 +18,7 @@ function Portfolio() {
         <a
           href="https://Sergey-Tsybulkin.github.io/russian-travel"
           target="_blank"
-          rel='noreferrer'
+          rel="noreferrer"
           className="portfolio__link hover"
         >
           Адаптивный сайт
@@ -27,7 +27,7 @@ function Portfolio() {
         <a
           href="https://Sergey-Tsybulkin.github.io/mesto/"
           target="_blank"
-          rel='noreferrer'
+          rel="noreferrer"
           className="portfolio__link hover"
         >
           Одностраничное приложение

@@ -1,6 +1,6 @@
-import React from "react";
-import "../RegisterLoginForm/RegisterLoginForm.css";
-import RegisterLoginForm from "../RegisterLoginForm/RegisterLoginForm";
+import React from 'react';
+import '../RegisterLoginForm/RegisterLoginForm.css';
+import RegisterLoginForm from '../RegisterLoginForm/RegisterLoginForm';
 
 function Register() {
   return (

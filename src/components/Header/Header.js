@@ -81,7 +81,11 @@ function Header() {
               onClick={handleOpen}
               type="button"
             >
-              <img src={burgerButton} alt="Кнопка меню" />
+              <img
+                className="header__button-menu_image"
+                src={burgerButton}
+                alt="Кнопка меню"
+              />
             </button>
           </div>
           {isClicked ? <NavigationPanel handleClose={handleClose} /> : ''}
