@@ -1,0 +1,143 @@
+.search-form {
+  margin: 0 70px 10px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  border-bottom: 1px solid #424242;
+}
+
+.search-form__container {
+  margin: 71px 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  background: #2F2F2F;
+  border-radius: 9px;
+}
+
+.search-form__wihout-checkbox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-form__input {
+  width: 100%;
+  padding: 25px 0 25px 27px;
+  background: #2F2F2F;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  border-radius: 9px;
+}
+
+.search-form__input::placeholder {
+  background: url('../../images/search-form__button-search.svg');
+  background-repeat: no-repeat;
+  padding-left: 10px;
+  height: 34px;
+}
+
+.search-form__button {
+  background-image: url('../../images/search-form__button-find.svg');
+  padding-left: 55px;
+  width: 55px;
+  height: 34px;
+  cursor: pointer;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  transition: opacity 0.7s ease-out;
+}
+
+.filter-checkbox__text {
+  margin-left: 48px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+}
+
+.search-form__divide-line {
+  border-right: 1px solid #424242;
+  align-self: center;
+  height: 40px;
+  padding-left: 29px;
+}
+
+@media screen and (max-width:860px) {
+  .search-form {
+    margin: 0 29px 10px 29px;
+  }
+
+  .search-form__container {
+    padding-right: 20px;
+    gap: 18px;
+    margin-bottom: 110px;
+  }
+
+  .search-form__input::placeholder {
+    padding-left: 37px;
+  }
+
+  .search-form__button {
+    width: 100px;
+  }
+
+  .search-form__divide-line {
+    padding-left: 20px;
+  }
+}
+
+
+
+@media screen and (max-width: 540px) {
+  .search-form {
+    margin: 0 10px;
+  }
+
+  .search-form__container {
+    margin: 0;
+    padding: 80px 0 0 0;
+    flex-direction: column;
+    background-color: unset;
+  }
+
+  .search-form__wihout-checkbox {
+    display: flex;
+    align-items: center;
+    background: #2F2F2F;
+    min-height: 72px;
+    width: 100%;
+    border-radius: 9px;
+  }
+
+  .search-form__input {
+    padding: 13px 0 13px 9px;
+    font-size: 12px;
+  }
+
+  .search-form__input::placeholder {
+    background: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
+  }
+
+  .search-form__button {
+    margin-right: 19px;
+    border-radius: 3px;
+  }
+
+  .search-form__divide-line {
+    display: none;
+  }
+}
