@@ -39,7 +39,7 @@ function MoviesCard() {
           </div>
           <button
             type="button"
-            className="movies-card__like-button card__like-button_active hover"
+            className="movies-card__like-button movies-card__like-button_active hover"
           ></button>
         </div>
         <span className="movies-card__duration">1ч 42м</span>
@@ -57,7 +57,7 @@ function MoviesCard() {
           </div>
           <button
             type="button"
-            className="movies-card__like-button card__like-button_active hover"
+            className="movies-card__like-button movies-card__like-button_active hover"
           ></button>
         </div>
         <span className="movies-card__duration">1ч 42м</span>
@@ -75,7 +75,7 @@ function MoviesCard() {
           </div>
           <button
             type="button"
-            className="movies-card__like-button card__like-button_active hover"
+            className="movies-card__like-button movies-card__like-button_active hover"
           ></button>
         </div>
         <span className="movies-card__duration">1ч42м</span>
@@ -93,7 +93,7 @@ function MoviesCard() {
           </div>
           <button
             type="button"
-            className="movies-card__like-button card__like-button_active hover"
+            className="movies-card__like-button movies-card__like-button_active hover"
           ></button>
         </div>
         <span className="movies-card__duration">1ч42м</span>
@@ -111,7 +111,7 @@ function MoviesCard() {
           </div>
           <button
             type="button"
-            className="movies-card__like-button card__like-button_active hover"
+            className="movies-card__like-button movies-card__like-button_active hover"
           ></button>
         </div>
         <span className="movies-card__duration">1ч42м</span>
@@ -129,7 +129,7 @@ function MoviesCard() {
           </div>
           <button
             type="button"
-            className="movies-card__like-button card__like-button_active hover"
+            className="movies-card__like-button movies-card__like-button_active hover"
           ></button>
         </div>
         <span className="movies-card__duration">1ч42м</span>
@@ -147,7 +147,7 @@ function MoviesCard() {
           </div>
           <button
             type="button"
-            className="movies-card__like-button card__like-button_active hover"
+            className="movies-card__like-button movies-card__like-button_active hover"
           ></button>
         </div>
         <span className="movies-card__duration">1ч42м</span>

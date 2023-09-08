@@ -76,7 +76,7 @@
   right: 0;
 }
 
-.profile-button__edit {
+.profile__button-edit {
   margin-top: 186px;
   min-height: 16px;
   font-size: 13px;
@@ -91,7 +91,7 @@
   transition: opacity 0.7s ease-out;
 }
 
-.profile-button__signout {
+.profile__button-signout {
   min-height: 16px;
   font-size: 13px;
   font-weight: 500;
@@ -115,7 +115,7 @@
     margin-bottom: 97px;
   }
 
-  .profile-button__edit {
+  .profile__button-edit {
     margin-top: 176px;
   }
 }
@@ -137,7 +137,7 @@
     width: 140px;
   }
 
-  .profile-button__edit {
+  .profile__button-edit {
     margin-top: 342px;
     font-size: 12px;
     font-weight: 400;
@@ -145,7 +145,7 @@
     letter-spacing: 0px;
   }
 
-  .profile-button__signout {
+  .profile__button-signout {
     font-size: 12px;
     font-weight: 500;
     line-height: 15px;

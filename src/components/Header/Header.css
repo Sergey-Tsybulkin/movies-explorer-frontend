@@ -97,10 +97,15 @@
     align-items: center;
   }
 
-  .header__button-menu_image {
+  .header__burger-image {
     cursor: pointer;
     transition: opacity 0.7s ease-out;
   }
+}
+
+.header__burger-image:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 540px) {
@@ -128,7 +133,7 @@
     width: 43px;
   }
 
-  .header__button-menu_image {
+  .header__burger-image {
     width: 37px;
   }
 }

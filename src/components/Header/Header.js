@@ -82,7 +82,7 @@ function Header() {
               type="button"
             >
               <img
-                className="header__button-menu_image hover"
+                className="header__burger-image"
                 src={burgerButton}
                 alt="Кнопка меню"
               />

@@ -36,10 +36,10 @@ function Profile() {
             />
             <span className="profile__input-error">{}</span>
           </label>
-          <button type="submit" className="profile-button__edit hover">
+          <button type="submit" className="profile__button-edit hover">
             Редактировать
           </button>
-          <Link to="/" type="button" className="profile-button__signout hover">
+          <Link to="/" type="button" className="profile__button-signout hover">
             Выйти из аккаунта
           </Link>
         </form>
