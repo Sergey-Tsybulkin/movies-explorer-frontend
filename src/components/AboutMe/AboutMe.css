@@ -124,6 +124,7 @@
 @media screen and (max-width: 540px) {
   .about-me {
     padding: 72px 14px 50px;
+    background-color: #272727;
   }
 
   .about-me__title {
