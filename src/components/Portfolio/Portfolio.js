@@ -13,7 +13,7 @@ function Portfolio() {
           className="portfolio__link hover"
         >
           Статичный сайт
-          <p className="portfolio__link__arrow">↗</p>
+          <p className="portfolio__link-arrow">↗</p>
         </a>
         <a
           href="https://Sergey-Tsybulkin.github.io/russian-travel"
@@ -22,7 +22,7 @@ function Portfolio() {
           className="portfolio__link hover"
         >
           Адаптивный сайт
-          <p className="portfolio__link__arrow">↗</p>
+          <p className="portfolio__link-arrow">↗</p>
         </a>
         <a
           href="https://Sergey-Tsybulkin.github.io/mesto/"
@@ -31,7 +31,7 @@ function Portfolio() {
           className="portfolio__link hover"
         >
           Одностраничное приложение
-          <p className="portfolio__link__arrow">↗</p>
+          <p className="portfolio__link-arrow">↗</p>
         </a>
       </nav>
     </section>

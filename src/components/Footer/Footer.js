@@ -8,10 +8,10 @@ function Footer() {
         Учебный проект Яндекс.Практикум х BeatFilm.
       </p>
       <div className="footer__container">
-        <p className="footer__info__year">© {new Date().getFullYear()}</p>
+        <p className="footer__info-year">© {new Date().getFullYear()}</p>
         <a
           href="https://practicum.yandex.ru"
-          className="footer__link"
+          className="footer__link hover"
           target="_blank"
           rel="noreferrer"
         >
@@ -19,7 +19,7 @@ function Footer() {
         </a>
         <a
           href="https://github.com/Sergey-Tsybulkin"
-          className="footer__link"
+          className="footer__link hover"
           target="_blank"
           rel="noreferrer"
         >

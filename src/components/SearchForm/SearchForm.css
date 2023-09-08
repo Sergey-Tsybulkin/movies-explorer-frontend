@@ -40,9 +40,10 @@
 .search-form__input::placeholder {
   background: url('../../images/search-form__button-search.svg');
   background-repeat: no-repeat;
-  padding-left: 10px;
+  padding-left: 36px;
   height: 34px;
 }
+
 
 .search-form__button {
   background-image: url('../../images/search-form__button-find.svg');
@@ -125,6 +126,7 @@
   }
 
   .search-form__input::placeholder {
+    padding-left: 10px;
     background: none;
     font-size: 14px;
     font-weight: 400;

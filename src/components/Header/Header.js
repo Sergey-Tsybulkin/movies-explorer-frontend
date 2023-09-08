@@ -38,7 +38,7 @@ function Header() {
   return (
     <>
       {isNotLogged() && (
-        <header className="header header__landing-color" id="header">
+        <header className="header header-color" id="header">
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип сайта" />
           </Link>
@@ -60,7 +60,7 @@ function Header() {
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип" />
           </Link>
-          <div className="header__container_movies">
+          <div className="header__container-movies">
             <NavLink to="/movies" className="header__button hover">
               Фильмы
             </NavLink>
@@ -82,7 +82,7 @@ function Header() {
               type="button"
             >
               <img
-                className="header__button-menu_image"
+                className="header__button-menu_image hover"
                 src={burgerButton}
                 alt="Кнопка меню"
               />

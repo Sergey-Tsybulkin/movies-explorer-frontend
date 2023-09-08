@@ -1,5 +1,4 @@
 import React from 'react';
-import './Movies.css';
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
@@ -7,12 +6,14 @@ import Footer from '../Footer/Footer';
 
 function Movies() {
   return (
-    <section className="movies">
+    <>
       <Header />
-      <SearchForm />
-      <MoviesCardList />
+      <main className="movies">
+        <SearchForm />
+        <MoviesCardList />
+      </main>
       <Footer />
-    </section>
+    </>
   );
 }
 

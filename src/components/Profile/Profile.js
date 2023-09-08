@@ -1,6 +1,7 @@
 import React from 'react';
 import './Profile.css';
 import Header from '../Header/Header';
+import { Link } from 'react-router-dom';
 
 function Profile() {
   return (
@@ -35,12 +36,12 @@ function Profile() {
             />
             <span className="profile__input-error">{}</span>
           </label>
-          <button type="button" className="profile-button__edit hover">
+          <button type="submit" className="profile-button__edit hover">
             Редактировать
           </button>
-          <button type="button" className="profile-button__signout hover">
+          <Link to="/" type="button" className="profile-button__signout hover">
             Выйти из аккаунта
-          </button>
+          </Link>
         </form>
       </section>
     </>

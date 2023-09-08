@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.header__landing-color {
+.header-color {
   background-color: #073042;
 }
 
@@ -24,7 +24,7 @@
   margin-left: auto;
 }
 
-.header__container_movies {
+.header__container-movies {
   display: flex;
   gap: 16px;
   padding-left: 44px;
@@ -79,7 +79,7 @@
     display: none;
   }
 
-  .header__container_movies {
+  .header__container-movies {
     display: none;
   }
 
@@ -95,6 +95,11 @@
     background-color: transparent;
     border: none;
     align-items: center;
+  }
+
+  .header__button-menu_image {
+    cursor: pointer;
+    transition: opacity 0.7s ease-out;
   }
 }
 

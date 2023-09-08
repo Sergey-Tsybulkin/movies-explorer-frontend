@@ -22,10 +22,10 @@ function AboutProject() {
         </p>
       </div>
       <div className="about-project__time">
-        <p className="about-project__time__data">1 неделя</p>
-        <p className="about-project__time__description">Back-end</p>
-        <p className="about-project__time__data">4 недели</p>
-        <p className="about-project__time__description">Front-end</p>
+        <p className="about-project__time-data">1 неделя</p>
+        <p className="about-project__time-description">Back-end</p>
+        <p className="about-project__time-data">4 недели</p>
+        <p className="about-project__time-description">Front-end</p>
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ function RegisterLoginForm({
   isLoading,
 }) {
   return (
-    <div className="register-login-form__container">
+    <main className="register-login-form">
       <Link to="/" className="register-login-form__logo hover">
         <img src={logo} alt="Лого" />
       </Link>
@@ -30,11 +30,7 @@ function RegisterLoginForm({
         <button
           type="submit"
           disabled={isDisabled ? true : false}
-          className={
-            isDisabled || isLoading
-              ? 'register-login-form__button-save register-login-form__button-save_inactive hover'
-              : 'register-login-form__button-save hover'
-          }
+          className="register-login-form__button-save"
         >
           {buttonText}
         </button>
@@ -45,7 +41,7 @@ function RegisterLoginForm({
           {linkText}
         </Link>
       </p>
-    </div>
+    </main>
   );
 }
 

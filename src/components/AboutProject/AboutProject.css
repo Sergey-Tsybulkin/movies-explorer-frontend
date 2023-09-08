@@ -62,7 +62,7 @@
   gap: 6px 0;
 }
 
-.about-project__time__data {
+.about-project__time-data {
   box-sizing: border-box;
   font-size: 14px;
   font-weight: 400;
@@ -73,7 +73,7 @@
   background-color: #303030;
 }
 
-.about-project__time__data:nth-of-type(1) {
+.about-project__time-data:nth-of-type(1) {
   background: #3DDC84;
   color: black;
 }
@@ -115,6 +115,7 @@
 @media screen and (max-width: 540px) {
   .about-project {
     padding: 0;
+    background-color: #272727;
   }
 
   .about-project__container {
@@ -133,6 +134,7 @@
     font-weight: 400;
     line-height: 22px;
     letter-spacing: -0.04em;
+    background-color: #202020;
   }
 
   .about-project__subtitle:last-of-type {
@@ -159,7 +161,7 @@
     gap: 4px 0;
   }
 
-  .about-project__time__data {
+  .about-project__time-data {
     font-size: 11px;
     font-weight: 400;
     line-height: 13px;
