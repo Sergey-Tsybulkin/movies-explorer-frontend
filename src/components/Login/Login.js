@@ -34,7 +34,7 @@ function Login() {
           required
         />
         <span className="register-login-form__input-error">{}</span>
-        <div className="login-form__space"></div>
+        <div className="register-login-form__space"></div>
       </label>
     </RegisterLoginForm>
   );

@@ -21,7 +21,7 @@ function RegisterLoginForm({
       </Link>
       <h3 className="register-login-form__title">{title}</h3>
       <form
-        className="register-login-form"
+        className="register-login-form__form"
         id="register-login-form"
         onSubmit={onSubmit}
         noValidate

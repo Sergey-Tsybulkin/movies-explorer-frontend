@@ -22,7 +22,7 @@
   text-align: left;
 }
 
-.register-login-form {
+.register-login-form__form {
   width: 100%;
   min-height: 380px;
   display: flex;
@@ -108,9 +108,6 @@
   outline: none;
 }
 
-.register-form {
-  padding: 10px;
-}
 
 .register-login-form__input::placeholder {
   font-size: 14px;
@@ -145,7 +142,7 @@
   visibility: visible;
 }
 
-.login-form__space {
+.register-login-form__space {
   margin-top: 69px;
 }
 
