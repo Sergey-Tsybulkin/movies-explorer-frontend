@@ -1,0 +1,32 @@
+.movies-cards__button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0 0;
+  min-height: 115px;
+}
+
+.movies-cards__button {
+  min-width: 320px;
+  height: 36px;
+  background-color: #2f2f2f;
+  color: #fff;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0px;
+  border-radius: 6px;
+  transition: opacity 0.7s ease-out;
+}
+
+
+@media screen and (max-width: 540px) {
+  .movies-cards__button-wrapper {
+    padding-bottom: 19px;
+  }
+
+  .movies-cards__button {
+    min-width: 240px;
+  }
+}
