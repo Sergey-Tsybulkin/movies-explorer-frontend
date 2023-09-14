@@ -1,8 +1,17 @@
-import React from "react";
-import { Navigate } from "react-router-dom";
+export const ORIGIN_URL = 'https://api.nomoreparties.co/beatfilm-movies';
 
-const ProtectedRoute = ({ component: Component, ...props }) => {
-  return props.loggedIn ? <Component {...props} /> : <Navigate to="/" />;
-};
+function checkResponse(res) {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`${res.status}`);
+}
 
-export default ProtectedRoute;
+export function getMovies() {
+  return fetch(ORIGIN_URL, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(checkResponse);
+}
