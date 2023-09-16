@@ -2,7 +2,7 @@ const SHORTMOVIES_DURATION = 40;
 
 const SHOW_MORE_RES_1280_PLUS = 3;
 const SHOW_MORE_RES_768 = 2;
-const SHOW_MORE_320_480 = 1;
+const SHOW_MORE_320_480 = 2;
 
 const USER_NAME_REGEXP = '^[A-Za-zА-Яа-яЁё /s -]+$';
 

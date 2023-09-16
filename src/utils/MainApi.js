@@ -1,18 +1,20 @@
 /////////////////////////////////////////////////// change
 
-export const ORIGIN_URL = 'http://localhost:3000';
+// export const ORIGIN_URL = 'http://localhost:3000';
+export const ORIGIN_URL = 'https://api.moviepoisk.nomoredomainsicu.ru';
 
-function checkResponse(res) {
+export const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
   }
   return Promise.reject(`${res.status}`);
-}
+};
 
 export const register = (name, email, password) => {
   return fetch(`${ORIGIN_URL}/signup`, {
     method: 'POST',
     headers: {
+      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
@@ -23,44 +25,39 @@ export const register = (name, email, password) => {
   }).then(checkResponse);
 };
 
-export const login = (name, email, password) => {
+export const login = (email, password) => {
   return fetch(`${ORIGIN_URL}/signin`, {
     method: 'POST',
     headers: {
+      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      name,
       email,
       password,
     }),
-  })
-    .then(checkResponse)
-    .then((data) => {
-      if (data.token) {
-        localStorage.setItem('jwt', data.token);
-      }
-      return data;
-    });
+  }).then(checkResponse);
 };
 
 export const getToken = (jwt) => {
   return fetch(`${ORIGIN_URL}/users/me`, {
     method: 'GET',
     headers: {
+      Accept: 'application/json',
       'Content-Type': 'application/json',
-      authorization: `Bearer ${jwt}`,
+      Authorization: `Bearer ${jwt}`,
     },
   }).then(checkResponse);
 };
 
 export const getUserData = () => {
   return fetch(`${ORIGIN_URL}/users/me`, {
+    method: 'GET',
     headers: {
+      Authorization: `Bearer ${localStorage.getItem('jwt')}`,
       'Content-Type': 'application/json',
-      authorization: `Bearer ${localStorage.getItem('jwt')}`,
     },
-  }).then((res) => this._getResponseData(res));
+  }).then(checkResponse);
 };
 
 export const updateUserData = (data) => {
