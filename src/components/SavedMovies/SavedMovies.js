@@ -4,7 +4,7 @@ import SearchForm from '../SearchForm/SearchForm';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-import { filterMovies, filterShortMovies } from '../../utils/filter';
+import { filterMovies, filterShortMovies } from '../../utils/utils';
 
 function SavedMovies({ loggedIn, savedMovies, onDeleteCard }) {
   const [filteredMovies, setFilteredMovies] = useState(savedMovies);

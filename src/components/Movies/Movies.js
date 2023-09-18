@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './Movies.css';
 
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
 
-import { filterMovies, filterShortMovies } from '../../utils/';
+import { filterMovies, filterShortMovies } from '../../utils/utils';
 import * as movies from '../../utils/MoviesApi';
 
 function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
