@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
 import logo from '../../images/logo.svg';
@@ -7,9 +7,7 @@ import account from '../../images/profile.svg';
 import NavigationPanel from '../NavigationPanel/NavigationPanel';
 import burgerButton from '../../images/button-menu.svg';
 
-function Header() {
-  const location = useLocation();
-
+function Header({ loggedIn }) {
   const [isClicked, setIsClicked] = React.useState(false);
 
   function handleOpen() {
@@ -20,24 +18,9 @@ function Header() {
     setIsClicked(false);
   }
 
-  const isNotLogged = () => {
-    const { pathname } = location;
-    return pathname === '/';
-  };
-
-  const isLogged = () => {
-    const { pathname } = location;
-
-    return (
-      pathname === '/profile' ||
-      pathname === '/movies' ||
-      pathname === '/saved-movies'
-    );
-  };
-
   return (
     <>
-      {isNotLogged() && (
+      {!loggedIn ? (
         <header className="header header-color" id="header">
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип сайта" />
@@ -54,8 +37,7 @@ function Header() {
             </Link>
           </div>
         </header>
-      )}
-      {isLogged() && (
+      ) : (
         <header className="header" id="header">
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип" />

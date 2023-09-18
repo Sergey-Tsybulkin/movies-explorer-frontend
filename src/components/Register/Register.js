@@ -2,7 +2,21 @@ import React from 'react';
 import '../RegisterLoginForm/RegisterLoginForm.css';
 import RegisterLoginForm from '../RegisterLoginForm/RegisterLoginForm';
 
-function Register() {
+import { EMAIL_REGEXP } from '../../utils/constants';
+import useFormWithValidation from '../../hooks/useFormWithValidation';
+
+function Register({ onRegister, isLoading }) {
+  const { enteredValues, errors, handleChange, isFormValid } =
+    useFormWithValidation();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    onRegister({
+      name: enteredValues.name,
+      email: enteredValues.email,
+      password: enteredValues.password,
+    });
+  }
   return (
     <RegisterLoginForm
       title="Добро пожаловать!"
@@ -10,6 +24,9 @@ function Register() {
       question="Уже зарегистрированы?"
       linkText=" Войти"
       link="/signin"
+      onSubmit={handleSubmit}
+      isDisabled={!isFormValid}
+      isLoading={isLoading}
     >
       <label className="register-login-form__field">
         Имя
@@ -22,8 +39,10 @@ function Register() {
           minLength="2"
           maxLength="40"
           required
+          onChange={handleChange}
+          value={enteredValues.name || ''}
         />
-        <span className="register-login-form__input-error">{}</span>
+        <span className="register-login-form__input-error">{errors.name}</span>
       </label>
       <label className="register-login-form__field">
         E-mail
@@ -34,8 +53,11 @@ function Register() {
           type="email"
           placeholder="Введите email"
           required
+          onChange={handleChange}
+          pattern={EMAIL_REGEXP}
+          value={enteredValues.email || ''}
         />
-        <span className="register-login-form__input-error">{}</span>
+        <span className="register-login-form__input-error">{errors.email}</span>
       </label>
       <label className="register-login-form__field">
         Пароль
@@ -46,8 +68,12 @@ function Register() {
           type="password"
           placeholder="Введите пароль"
           required
+          onChange={handleChange}
+          value={enteredValues.password || ''}
         />
-        <span className="register-login-form__input-error">{}</span>
+        <span className="register-login-form__input-error">
+          {errors.password}
+        </span>
       </label>
     </RegisterLoginForm>
   );

@@ -1,9 +1,38 @@
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './SearchForm.css';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 
-function SearchForm() {
+function SearchForm({ onSearchMoviesFilms, onFilterMovies, isShortFilm }) {
+  const location = useLocation();
+  const [isQueryError, setIsQueryError] = useState(false);
+  const [query, setQuery] = useState('');
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    if (query.trim().length === 0) {
+      setIsQueryError(true);
+    } else {
+      setIsQueryError(false);
+      onSearchMoviesFilms(query);
+    }
+  }
+  function handleChangeQuery(e) {
+    setQuery(e.target.value);
+  }
+
+  useEffect(() => {
+    if (
+      location.pathname === '/movies' &&
+      localStorage.getItem('movieSearch')
+    ) {
+      const localQuery = localStorage.getItem('movieSearch');
+      setQuery(localQuery);
+    }
+  }, [location]);
+
   return (
-    <form className="search-form" id="form">
+    <form className="search-form" id="form" onSubmit={handleFormSubmit}>
       <div className="search-form__container">
         <div className="search-form__wihout-checkbox">
           <input
@@ -15,11 +44,21 @@ function SearchForm() {
             minLength="1"
             maxLength="40"
             id="search-input"
+            onChange={handleChangeQuery}
+            value={query || ''}
           />
           <button className="search-form__button hover" type="submit"></button>
           <span className="search-form__divide-line"></span>
         </div>
-        <FilterCheckbox />
+        <FilterCheckbox
+          onFilterMovies={onFilterMovies}
+          isShortFilm={isShortFilm}
+        />
+        {isQueryError && (
+          <span className="search__form-error">
+            Нужно ввести ключевое слово
+          </span>
+        )}
       </div>
     </form>
   );

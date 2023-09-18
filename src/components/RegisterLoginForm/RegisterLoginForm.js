@@ -30,7 +30,11 @@ function RegisterLoginForm({
         <button
           type="submit"
           disabled={isDisabled ? true : false}
-          className="register-login-form__button-save"
+          className={
+            isDisabled || isLoading
+              ? 'register-login-form__button-save register-login-form__button-save_inactive'
+              : 'register-login-form__button-save'
+          }
         >
           {buttonText}
         </button>

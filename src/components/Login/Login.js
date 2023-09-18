@@ -1,8 +1,20 @@
 import React from 'react';
 import '../RegisterLoginForm/RegisterLoginForm.css';
 import RegisterLoginForm from '../RegisterLoginForm/RegisterLoginForm';
+import useFormWithValidation from '../../hooks/useFormWithValidation';
+import { EMAIL_REGEXP } from '../../utils/constants';
 
-function Login() {
+function Login({ onLogin, isLoading }) {
+  const { enteredValues, errors, handleChangeInput, isFormValid } =
+    useFormWithValidation();
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    onLogin({
+      email: enteredValues.email,
+      password: enteredValues.password,
+    });
+  }
   return (
     <RegisterLoginForm
       title="Рады видеть!"
@@ -10,6 +22,9 @@ function Login() {
       question="Еще не зарегистрированы?"
       linkText=" Регистрация"
       link="/signup"
+      onSubmit={handleFormSubmit}
+      isDisabled={!isFormValid}
+      isLoading={isLoading}
     >
       <label className="register-login-form__field">
         E-mail
@@ -19,9 +34,12 @@ function Login() {
           id="email-input"
           type="email"
           placeholder="E-mail"
+          onChange={handleChangeInput}
+          pattern={EMAIL_REGEXP}
+          value={enteredValues.email || ''}
           required
         />
-        <span className="register-login-form__input-error">{}</span>
+        <span className="register-login-form__input-error">{errors.email}</span>
       </label>
       <label className="register-login-form__field">
         Пароль
@@ -31,9 +49,13 @@ function Login() {
           id="password-input"
           type="password"
           placeholder="Пароль"
+          onChange={handleChangeInput}
+          value={enteredValues.password || ''}
           required
         />
-        <span className="register-login-form__input-error">{}</span>
+        <span className="register-login-form__input-error">
+          {errors.password}
+        </span>
         <div className="register-login-form__space"></div>
       </label>
     </RegisterLoginForm>
