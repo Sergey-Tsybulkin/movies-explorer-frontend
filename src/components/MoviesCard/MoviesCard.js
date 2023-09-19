@@ -15,6 +15,7 @@ function MoviesCard({
   savedMovies,
 }) {
   function onCardClick() {
+    console.log(saved)
     if (saved) {
       onDeleteCard(
         savedMovies.filter((movies) => movies.movieId === card.id)[0]
@@ -30,8 +31,8 @@ function MoviesCard({
 
   const cardLikeButtonClassName = `${
     saved
-      ? 'movies-card__like-button movies-card__like-button_active'
-      : 'movies-card__like-button'
+      ? 'movies-card__like-button hover'
+      : 'movies-card__like-button movies-card__like-button_active hover'
   }`;
 
   return (

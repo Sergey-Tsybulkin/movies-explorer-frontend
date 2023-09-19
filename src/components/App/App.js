@@ -21,6 +21,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [savedMovies, setSavedMovies] = useState([]);
+  
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -116,10 +117,10 @@ function App() {
 
   function handleCardDelete(card) {
     mainApi
-      .deleteCard(card._id)
+      .deleteMovie(card._id)
       .then(() => {
         setSavedMovies((state) =>
-          state.filter((item) => item._id !== card._id)
+          state.filter((item) => item._id !== card._id),
         );
       })
       .catch((err) => {
@@ -130,7 +131,7 @@ function App() {
 
   function handleCardLike(card) {
     mainApi
-      .addCard(card)
+      .addMovie(card)
       .then((newMovie) => {
         setSavedMovies([newMovie, ...savedMovies]);
       })
@@ -182,7 +183,7 @@ function App() {
               }
             />
             <Route
-              path={'/movies'}
+              path={"/movies"}
               element={
                 <ProtectedRoute
                   path="/movies"
@@ -195,7 +196,7 @@ function App() {
               }
             />
             <Route
-              path={'/saved-movies'}
+              path={"/saved-movies"}
               element={
                 <ProtectedRoute
                   path="/saved-movies"

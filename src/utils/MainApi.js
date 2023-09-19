@@ -84,7 +84,7 @@ export const getMovies = () => {
   }).then((res) => checkResponse(res));
 };
 
-export const addCard = (data) => {
+export const addMovie = (data) => {
   return fetch(`${ORIGIN_URL}/movies`, {
     method: 'POST',
     headers: {
@@ -108,7 +108,7 @@ export const addCard = (data) => {
   }).then((res) => checkResponse(res));
 };
 
-export const deleteCard = (cardId) => {
+export const deleteMovie = (cardId) => {
   return fetch(`${ORIGIN_URL}/movies/${cardId}`, {
     method: 'DELETE',
     headers: {
