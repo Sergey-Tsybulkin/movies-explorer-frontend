@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////// change
 
-// export const ORIGIN_URL = 'http://localhost:3000';
-export const ORIGIN_URL = 'https://api.moviepoisk.nomoredomainsicu.ru';
+export const ORIGIN_URL = "http://localhost:3000";
+// export const ORIGIN_URL = 'https://api.moviepoisk.nomoredomainsicu.ru';
 
 export const checkResponse = (res) => {
   if (res.ok) {
@@ -22,7 +22,7 @@ export const register = (name, email, password) => {
       email,
       password,
     }),
-  }).then(checkResponse);
+  }).then((res) => checkResponse(res));
 };
 
 export const login = (email, password) => {
@@ -36,18 +36,18 @@ export const login = (email, password) => {
       email,
       password,
     }),
-  }).then(checkResponse);
+  }).then((res) => checkResponse(res));
 };
 
-export const getToken = (jwt) => {
+export const getToken = (token) => {
   return fetch(`${ORIGIN_URL}/users/me`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${jwt}`,
+      Authorization: `Bearer ${token}`,
     },
-  }).then(checkResponse);
+  }).then((res) => checkResponse(res));
 };
 
 export const getUserData = () => {
@@ -57,7 +57,7 @@ export const getUserData = () => {
       Authorization: `Bearer ${localStorage.getItem('jwt')}`,
       'Content-Type': 'application/json',
     },
-  }).then(checkResponse);
+  }).then((res) => checkResponse(res));
 };
 
 export const updateUserData = (data) => {
@@ -71,7 +71,7 @@ export const updateUserData = (data) => {
       name: data.name,
       email: data.email,
     }),
-  }).then(checkResponse);
+  }).then((res) => checkResponse(res));
 };
 
 export const getMovies = () => {
@@ -81,7 +81,7 @@ export const getMovies = () => {
       Authorization: `Bearer ${localStorage.getItem('jwt')}`,
       'Content-Type': 'application/json',
     },
-  }).then(checkResponse);
+  }).then((res) => checkResponse(res));
 };
 
 export const addCard = (data) => {
@@ -105,7 +105,7 @@ export const addCard = (data) => {
       nameRU: data.nameRU,
       nameEN: data.nameEN,
     }),
-  }).then(checkResponse);
+  }).then((res) => checkResponse(res));
 };
 
 export const deleteCard = (cardId) => {
@@ -115,5 +115,5 @@ export const deleteCard = (cardId) => {
       Authorization: `Bearer ${localStorage.getItem('jwt')}`,
       'Content-Type': 'application/json',
     },
-  }).then(checkResponse);
+  }).then((res) => checkResponse(res));
 };

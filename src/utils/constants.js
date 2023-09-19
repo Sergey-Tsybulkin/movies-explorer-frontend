@@ -6,8 +6,7 @@ const SHOW_MORE_320_480 = 2;
 
 const USER_NAME_REGEXP = '^[A-Za-zА-Яа-яЁё /s -]+$';
 
-const EMAIL_REGEXP =
-  "^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@([a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?.)*(aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$";
+const EMAIL_REGEXP = "[a-zA-Z0-9_.]+@[a-zA-Z0-9_]+\\.[a-z]{2,}";
 
 export {
   SHORTMOVIES_DURATION,

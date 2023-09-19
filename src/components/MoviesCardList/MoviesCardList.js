@@ -77,7 +77,7 @@ function MoviesCardList({
         <>
           {pathname === '/saved-movies' ? (
             <>
-              <ul className="cards__list">
+              <ul className="movies-cards__list">
                 {cards.map((card) => (
                   <MoviesCard
                     key={isSavedFilms ? card._id : card.id}
@@ -95,7 +95,7 @@ function MoviesCardList({
             </>
           ) : (
             <>
-              <ul className="cards__list">
+              <ul className="movies-cards__list">
                 {cards.slice(0, displayMovies).map((card) => (
                   <MoviesCard
                     key={isSavedFilms ? card._id : card.id}
