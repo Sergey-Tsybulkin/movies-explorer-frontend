@@ -28,7 +28,6 @@ function App() {
 
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
-    console.log(jwt);
     if (jwt) {
       mainApi
         .getToken(jwt)
@@ -43,6 +42,7 @@ function App() {
           console.log(err);
         });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleLogin({ email, password }) {

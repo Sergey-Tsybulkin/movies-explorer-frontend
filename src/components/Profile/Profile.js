@@ -9,7 +9,7 @@ import useFormWithValidation from '../../hooks/useFormWithValidation';
 function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
   const currentUser = useContext(UserContext);
 
-  const { enteredValues, errors, handleChangeInput, isFormValid, resetForm } =
+  const { enteredValues, errors, handleChange, isFormValid, resetForm } =
     useFormWithValidation();
 
   const [isLastValues, setIsLastValues] = useState(false);
@@ -61,7 +61,7 @@ function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
               minLength="2"
               maxLength="40"
               required
-              onChange={handleChangeInput}
+              onChange={handleChange}
               value={enteredValues.name || ''}
             />
             <span className="profile__input-error">{errors.name}</span>
@@ -74,7 +74,7 @@ function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
               id="email-input"
               type="email"
               placeholder="Ваш адрес электронной почты"
-              onChange={handleChangeInput}
+              onChange={handleChange}
               pattern={EMAIL_REGEXP}
               value={enteredValues.email || ''}
               required

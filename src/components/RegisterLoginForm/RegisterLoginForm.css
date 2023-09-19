@@ -46,10 +46,10 @@
 }
 
 .register-login-form__button-save_inactive {
-  background: #303030;
-  border: 1px solid #000000;
   box-sizing: border-box;
   pointer-events: none;
+  background: #303030;
+
 }
 
 .register-login-form__button-save_loading {

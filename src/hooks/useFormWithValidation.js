@@ -5,7 +5,7 @@ const useFormWithValidation = () => {
   const [errors, setErrors] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
 
-  const handleChangeInput = (event) => {
+  const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
 
@@ -18,7 +18,7 @@ const useFormWithValidation = () => {
       ...errors,
       [name]: event.target.validationMessage,
     });
-    setIsFormValid(event.target.closest('#form').checkValidity());
+    setIsFormValid(event.target.closest('#register-login-form').checkValidity());
   };
 
   const resetForm = useCallback(
@@ -32,7 +32,7 @@ const useFormWithValidation = () => {
 
   return {
     enteredValues,
-    handleChangeInput,
+    handleChange,
     isFormValid,
     errors,
     resetForm,
