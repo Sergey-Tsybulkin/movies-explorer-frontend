@@ -1,7 +1,7 @@
 ## Frontend movie site
 
 ### IP: 158.160.122.49
-### Pull request(https://github.com/Sergey-Tsybulkin/movies-explorer-frontend/pulls)
+### Pull request(https://github.com/Sergey-Tsybulkin/movies-explorer-frontend/pull/4)
 ### [https://moviepoisk.ru.nomoredomainsicu.ru/](https://moviepoisk.ru.nomoredomainsicu.ru/)
 
 ### [Figma // dark-1](https://clck.ru/35cfuV)
