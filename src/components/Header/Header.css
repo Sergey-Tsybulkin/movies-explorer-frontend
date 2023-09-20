@@ -17,8 +17,8 @@
 }
 
 .header__container-sign {
-  align-items: end;
   display: flex;
+  align-items: flex-end;
   justify-content: flex-end;
   gap: 30px;
   margin-left: auto;

@@ -65,10 +65,6 @@
     transition: opacity 0.7s ease-out;
   }
 
-  .navigation-panel__link:hover {
-    border-bottom: 2px solid #fff;
-  }
-
   .navigation-panel__link_active {
     align-items: center;
     font-weight: 500;
@@ -76,8 +72,8 @@
     text-align: right;
     line-height: 16px;
     word-wrap: break-word;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     color: white;
     text-decoration: underline 1px;
   }

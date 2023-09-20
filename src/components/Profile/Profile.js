@@ -9,7 +9,7 @@ import useFormWithValidation from '../../hooks/useFormWithValidation';
 function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
   const currentUser = useContext(UserContext);
 
-  const { enteredValues, errors, handleChange, isFormValid, resetForm } =
+  const { enteredValues, errors, handleInputChange, isFormValid, rebootForm } =
     useFormWithValidation();
 
   const [isLastValues, setIsLastValues] = useState(false);
@@ -25,9 +25,9 @@ function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
   // reset after update
   useEffect(() => {
     if (currentUser) {
-      resetForm(currentUser);
+      rebootForm(currentUser);
     }
-  }, [currentUser, resetForm]);
+  }, [currentUser, rebootForm]);
 
   useEffect(() => {
     if (
@@ -38,7 +38,7 @@ function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
     } else {
       setIsLastValues(false);
     }
-  }, [enteredValues]);
+  }, [enteredValues]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <>
       <Header loggedIn={loggedIn} />
@@ -61,7 +61,7 @@ function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
               minLength="2"
               maxLength="40"
               required
-              onChange={handleChange}
+              onChange={handleInputChange}
               value={enteredValues.name || ''}
             />
             <span className="profile__input-error">{errors.name}</span>
@@ -74,7 +74,7 @@ function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
               id="email-input"
               type="email"
               placeholder="Ваш адрес электронной почты"
-              onChange={handleChange}
+              onChange={handleInputChange}
               pattern={EMAIL_REGEXP}
               value={enteredValues.email || ''}
               required

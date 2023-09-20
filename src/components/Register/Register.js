@@ -6,7 +6,7 @@ import { EMAIL_REGEXP } from '../../utils/constants';
 import useFormWithValidation from '../../hooks/useFormWithValidation';
 
 function Register({ onRegister, isLoading }) {
-  const { enteredValues, errors, handleChange, isFormValid } =
+  const { enteredValues, errors, handleInputChange, isFormValid } =
     useFormWithValidation();
 
   function handleSubmit(event) {
@@ -39,7 +39,7 @@ function Register({ onRegister, isLoading }) {
           minLength="2"
           maxLength="40"
           required
-          onChange={handleChange}
+          onChange={handleInputChange}
           value={enteredValues.name || ''}
         />
         <span className="register-login-form__input-error">{errors.name}</span>
@@ -53,7 +53,7 @@ function Register({ onRegister, isLoading }) {
           type="email"
           placeholder="Введите email"
           required
-          onChange={handleChange}
+          onChange={handleInputChange}
           pattern={EMAIL_REGEXP}
           value={enteredValues.email || ''}
         />
@@ -68,7 +68,7 @@ function Register({ onRegister, isLoading }) {
           type="password"
           placeholder="Введите пароль"
           required
-          onChange={handleChange}
+          onChange={handleInputChange}
           value={enteredValues.password || ''}
         />
         <span className="register-login-form__input-error">

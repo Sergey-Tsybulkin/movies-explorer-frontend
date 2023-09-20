@@ -4,20 +4,20 @@ import './MoviesCard.css';
 // import image__kino from '../../images/pic__kinoalmanah.jpg';
 // import image__benksi from '../../images/pic__benksi.jpg';
 
-import { transformDuration } from '../../utils/utils';
+import { transformDuration } from '../../utils/transform';
 
 function MoviesCard({
   card,
   isSavedFilms,
   handleLikeFilm,
-  onDeleteCard,
+  onDeleteMovie,
   saved,
   savedMovies,
 }) {
-  function onCardClick() {
-    console.log(saved)
+  function onMovieClick() {
+    console.log(saved);
     if (saved) {
-      onDeleteCard(
+      onDeleteMovie(
         savedMovies.filter((movies) => movies.movieId === card.id)[0]
       );
     } else {
@@ -26,7 +26,7 @@ function MoviesCard({
   }
 
   function onDelete() {
-    onDeleteCard(card);
+    onDeleteMovie(card);
   }
 
   const cardLikeButtonClassName = `${
@@ -50,9 +50,7 @@ function MoviesCard({
       </a>
 
       <div className="movies-card__container">
-        <div className="movies-card__title-block">
-          <h2 className="movies-card__title">{card.nameRU}</h2>
-        </div>
+        <h2 className="movies-card__title">{card.nameRU}</h2>
         {isSavedFilms ? (
           <button
             type="button"
@@ -63,7 +61,7 @@ function MoviesCard({
           <button
             type="button"
             className={cardLikeButtonClassName}
-            onClick={onCardClick}
+            onClick={onMovieClick}
           ></button>
         )}
       </div>

@@ -5,39 +5,39 @@ import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
 
-import { filterMovies, filterShortMovies } from '../../utils/utils';
+import { transformMovies, shortMoviesDurationFilter } from '../../utils/transform';
 import * as movies from '../../utils/MoviesApi';
 
-function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
+function Movies({ loggedIn, handleLikeFilm, onDeleteMovie, savedMovies }) {
   const [isLoading, setIsLoading] = useState(false);
   const [initialCardsMovies, setInitialCardsMovies] = useState([]);
 
-  const [isShortFilm, setisShortFilm] = useState(false);
+  const [isShortMovie, setIsShortMovie] = useState(false);
 
   const [isReqError, setisReqError] = useState(false);
   const [isNotFound, setIsNotFound] = useState(false);
 
   const [filteredMovies, setFilteredMovies] = useState([]);
 
-  function handleShortFilmToggle() {
-    setisShortFilm(!isShortFilm);
-    if (!isShortFilm) {
-      if (filterShortMovies(initialCardsMovies).length === 0) {
-        setFilteredMovies(filterShortMovies(initialCardsMovies));
+  function handleShortMovieToggle() {
+    setIsShortMovie(!isShortMovie);
+    if (!isShortMovie) {
+      if (shortMoviesDurationFilter(initialCardsMovies).length === 0) {
+        setFilteredMovies(shortMoviesDurationFilter(initialCardsMovies));
       } else {
-        setFilteredMovies(filterShortMovies(initialCardsMovies));
+        setFilteredMovies(shortMoviesDurationFilter(initialCardsMovies));
       }
     } else {
       setFilteredMovies(initialCardsMovies);
     }
-    localStorage.setItem('shortMovies', !isShortFilm);
+    localStorage.setItem('shortMovies', !isShortMovie);
   }
 
-  function handleUpdateFilteredMovies(movies, query, short) {
-    const moviesCardList = filterMovies(movies, query, short);
+  function handleMoviesFilterUpdate(movies, query, short) {
+    const moviesCardList = transformMovies(movies, query, short);
     setInitialCardsMovies(moviesCardList);
     setFilteredMovies(
-      short ? filterShortMovies(moviesCardList) : moviesCardList
+      short ? shortMoviesDurationFilter(moviesCardList) : moviesCardList
     );
     localStorage.setItem('movies', JSON.stringify(moviesCardList));
     localStorage.setItem('everyMovies', JSON.stringify(movies));
@@ -45,17 +45,17 @@ function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
 
   function onSearchMoviesFilms(query) {
     localStorage.setItem('movieSearch', query);
-    localStorage.setItem('shortMovies', isShortFilm);
+    localStorage.setItem('shortMovies', isShortMovie);
 
     if (localStorage.getItem('everyMovies')) {
       const movies = JSON.parse(localStorage.getItem('everyMovies'));
-      handleUpdateFilteredMovies(movies, query, isShortFilm);
+      handleMoviesFilterUpdate(movies, query, isShortMovie);
     } else {
       setIsLoading(true);
       movies
         .getMovies()
         .then((cardsData) => {
-          handleUpdateFilteredMovies(cardsData, query, isShortFilm);
+          handleMoviesFilterUpdate(cardsData, query, isShortMovie);
           setisReqError(false);
           console.log(cardsData);
         })
@@ -86,7 +86,7 @@ function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
       const movies = JSON.parse(localStorage.getItem('movies'));
       setInitialCardsMovies(movies);
       if (localStorage.getItem('shortMovies') === 'true') {
-        setFilteredMovies(filterShortMovies(movies));
+        setFilteredMovies(shortMoviesDurationFilter(movies));
       } else {
         setFilteredMovies(movies);
       }
@@ -95,9 +95,9 @@ function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
 
   useEffect(() => {
     if (localStorage.getItem('shortMovies') === 'true') {
-      setisShortFilm(true);
+      setIsShortMovie(true);
     } else {
-      setisShortFilm(false);
+      setIsShortMovie(false);
     }
   }, []);
 
@@ -106,9 +106,9 @@ function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
       <Header loggedIn={loggedIn} />
       <main className="movies">
         <SearchForm
-          isShortFilm={isShortFilm}
+          isShortMovie={isShortMovie}
           onSearchMoviesFilms={onSearchMoviesFilms}
-          onFilterMovies={handleShortFilmToggle}
+          onFilterMovies={handleShortMovieToggle}
         />
         <MoviesCardList
           isReqError={isReqError}
@@ -118,7 +118,7 @@ function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
           isSavedFilms={false}
           savedMovies={savedMovies}
           handleLikeFilm={handleLikeFilm}
-          onDeleteCard={onDeleteCard}
+          onDeleteMovie={onDeleteMovie}
         />
       </main>
       <Footer />

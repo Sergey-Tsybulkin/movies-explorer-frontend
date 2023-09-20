@@ -19,7 +19,7 @@ function MoviesCardList({
   isReqError,
   isNotFound,
   handleLikeFilm,
-  onDeleteCard,
+  onDeleteMovie,
 }) {
   const [displayMovies, setDisplayMovies] = useState(0);
   const { pathname } = useLocation();
@@ -86,7 +86,7 @@ function MoviesCardList({
                     card={card}
                     isSavedFilms={isSavedFilms}
                     handleLikeFilm={handleLikeFilm}
-                    onDeleteCard={onDeleteCard}
+                    onDeleteMovie={onDeleteMovie}
                     savedMovies={savedMovies}
                   />
                 ))}
@@ -104,7 +104,7 @@ function MoviesCardList({
                     card={card}
                     isSavedFilms={isSavedFilms}
                     handleLikeFilm={handleLikeFilm}
-                    onDeleteCard={onDeleteCard}
+                    onDeleteMovie={onDeleteMovie}
                     savedMovies={savedMovies}
                   />
                 ))}

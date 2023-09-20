@@ -22,7 +22,7 @@
 }
 
 .movies-card__container {
-  padding: 10px 0 26px;
+  padding: 7px 0 22px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #424242;
@@ -30,6 +30,9 @@
 }
 
 .movies-card__title {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
   margin: 0;
   padding: 0;
   max-width: 220px;
@@ -133,6 +136,10 @@
 
   .movies-card {
     height: auto;
+  }
+
+  .movies-card__container {
+    padding-bottom: 20px;
   }
 
   .movies-card__title {

@@ -5,7 +5,7 @@ import useFormWithValidation from '../../hooks/useFormWithValidation';
 import { EMAIL_REGEXP } from '../../utils/constants';
 
 function Login({ onLogin, isLoading }) {
-  const { enteredValues, errors, handleChange, isFormValid } =
+  const { enteredValues, errors, handleInputChange, isFormValid } =
     useFormWithValidation();
 
   function handleFormSubmit(event) {
@@ -34,7 +34,7 @@ function Login({ onLogin, isLoading }) {
           id="email-input"
           type="email"
           placeholder="E-mail"
-          onChange={handleChange}
+          onChange={handleInputChange}
           pattern={EMAIL_REGEXP}
           value={enteredValues.email || ''}
           required
@@ -49,7 +49,7 @@ function Login({ onLogin, isLoading }) {
           id="password-input"
           type="password"
           placeholder="Пароль"
-          onChange={handleChange}
+          onChange={handleInputChange}
           value={enteredValues.password || ''}
           required
         />

@@ -1,7 +1,7 @@
 import React from 'react';
 import './FilterCheckbox.css';
 
-function FilterCheckbox({ onFilterMovies, isShortFilm }) {
+function FilterCheckbox({ onFilterMovies, isShortMovie }) {
   return (
     <label className="filter-checkbox hover">
       <input
@@ -9,7 +9,7 @@ function FilterCheckbox({ onFilterMovies, isShortFilm }) {
         className="filter-checkbox__input"
         type="checkbox"
         onChange={onFilterMovies}
-        checked={isShortFilm}
+        checked={isShortMovie}
       ></input>
       <span className="filter-checkbox__slider"></span>
       <span className="filter-checkbox__text">Короткометражки</span>

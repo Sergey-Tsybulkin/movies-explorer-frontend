@@ -4,11 +4,11 @@ import SearchForm from '../SearchForm/SearchForm';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-import { filterMovies, filterShortMovies } from '../../utils/utils';
+import { transformMovies, shortMoviesDurationFilter } from '../../utils/transform';
 
-function SavedMovies({ loggedIn, savedMovies, onDeleteCard }) {
+function SavedMovies({ loggedIn, savedMovies, onDeleteMovie }) {
   const [filteredMovies, setFilteredMovies] = useState(savedMovies);
-  const [isShortFilm, setisShortFilm] = useState(false);
+  const [isShortMovie, setIsShortMovie] = useState(false);
   const [isNotFound, setIsNotFound] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -17,15 +17,15 @@ function SavedMovies({ loggedIn, savedMovies, onDeleteCard }) {
   }
 
   function handleShortToggle() {
-    setisShortFilm(!isShortFilm);
+    setIsShortMovie(!isShortMovie);
   }
 
   useEffect(() => {
-    const moviesCardList = filterMovies(savedMovies, searchQuery);
+    const moviesCardList = transformMovies(savedMovies, searchQuery);
     setFilteredMovies(
-      isShortFilm ? filterShortMovies(moviesCardList) : moviesCardList
+      isShortMovie ? shortMoviesDurationFilter(moviesCardList) : moviesCardList
     );
-  }, [savedMovies, isShortFilm, searchQuery]);
+  }, [savedMovies, isShortMovie, searchQuery]);
 
   useEffect(() => {
     if (filteredMovies.length === 0) {
@@ -48,7 +48,7 @@ function SavedMovies({ loggedIn, savedMovies, onDeleteCard }) {
           isSavedFilms={true}
           cards={filteredMovies}
           savedMovies={savedMovies}
-          onDeleteCard={onDeleteCard}
+          onDeleteMovie={onDeleteMovie}
         />
       </main>
       <Footer />

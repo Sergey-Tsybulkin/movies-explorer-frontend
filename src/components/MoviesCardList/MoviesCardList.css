@@ -23,7 +23,7 @@
 
 @media screen and (max-width: 540px) {
   .movies-cards__button-wrapper {
-    padding-bottom: 19px;
+    padding: 30px 0 19px;
   }
 
   .movies-cards__button {

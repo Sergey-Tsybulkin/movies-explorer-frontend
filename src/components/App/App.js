@@ -76,7 +76,7 @@ function App() {
       });
   }
 
-  function handleUnauthorized(err) {
+  function handleError(err) {
     if (err === '401') {
       handleSignOut();
     }
@@ -115,7 +115,7 @@ function App() {
     }
   }, [isLoggedIn, navigate]);
 
-  function handleCardDelete(card) {
+  function handleDeleteCard(card) {
     mainApi
       .deleteMovie(card._id)
       .then(() => {
@@ -125,11 +125,11 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-        handleUnauthorized(err);
+        handleError(err);
       });
   }
 
-  function handleCardLike(card) {
+  function handleLikeCard(card) {
     mainApi
       .addMovie(card)
       .then((newMovie) => {
@@ -137,7 +137,7 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-        handleUnauthorized(err);
+        handleError(err);
       });
   }
 
@@ -150,7 +150,7 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-        handleUnauthorized(err);
+        handleError(err);
       })
       .finally(() => {
         setIsLoading(false);
@@ -189,9 +189,9 @@ function App() {
                   path="/movies"
                   savedMovies={savedMovies}
                   loggedIn={isLoggedIn}
-                  onDeleteCard={handleCardDelete}
+                  onDeleteMovie={handleDeleteCard}
                   component={Movies}
-                  handleLikeFilm={handleCardLike}
+                  handleLikeFilm={handleLikeCard}
                 />
               }
             />
@@ -202,7 +202,7 @@ function App() {
                   path="/saved-movies"
                   savedMovies={savedMovies}
                   loggedIn={isLoggedIn}
-                  onDeleteCard={handleCardDelete}
+                  onDeleteMovie={handleDeleteCard}
                   component={SavedMovies}
                 />
               }
