@@ -45,7 +45,7 @@ function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
       <section className="profile">
         <h2 className="profile__title">Привет, {currentUser.name}!</h2>
         <form
-          id="form"
+          id="register-login-form"
           className="profile__form"
           onSubmit={handleFormSubmit}
           noValidate
@@ -59,7 +59,7 @@ function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
               type="text"
               placeholder="Ваше имя"
               minLength="2"
-              maxLength="40"
+              maxLength="30"
               required
               onChange={handleInputChange}
               value={enteredValues.name || ''}

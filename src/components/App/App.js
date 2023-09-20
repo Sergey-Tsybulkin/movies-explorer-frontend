@@ -12,6 +12,8 @@ import Login from '../Login/Login';
 import Profile from '../Profile/Profile';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import * as mainApi from '../../utils/MainApi';
+import ErrorTooltip from '../ErrorTooltip/ErrorTooltip';
+import ErrorTooltipUpdate from '../ErrorTooltipUpdate/ErrorTooltipUpdate';
 import './App.css';
 
 function App() {
@@ -22,6 +24,10 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [savedMovies, setSavedMovies] = useState([]);
   
+  const [isTooltipOpen, setisTooltipOpen] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isTooltipUpdateOpen, setisTooltipUpdateOpen] = useState(false);
+  const [isUpdate, setIsUpdate] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -52,12 +58,16 @@ function App() {
       .login(email, password)
       .then((res) => {
         if (res) {
+          setisTooltipOpen(true);
+          setIsSuccess(true);
           localStorage.setItem('jwt', res.token);
           navigate('./movies');
           setIsLoggedIn(true);
         }
       })
       .catch((err) => {
+        setisTooltipOpen(true);
+        setIsSuccess(false);
         console.log(err);
       })
       .finally(() => {
@@ -69,9 +79,13 @@ function App() {
     mainApi
       .register(name, email, password)
       .then(() => {
+        setisTooltipOpen(true);
+        setIsSuccess(true);
         handleLogin({ email, password });
       })
       .catch((err) => {
+        setisTooltipOpen(true);
+        setIsSuccess(false);
         console.log(err);
       });
   }
@@ -106,7 +120,6 @@ function App() {
       mainApi
         .getMovies()
         .then((cardsData) => {
-          console.log(cardsData);
           setSavedMovies(cardsData.reverse());
         })
         .catch((err) => {
@@ -124,6 +137,7 @@ function App() {
         );
       })
       .catch((err) => {
+        setIsSuccess(false);
         console.log(err);
         handleError(err);
       });
@@ -136,6 +150,7 @@ function App() {
         setSavedMovies([newMovie, ...savedMovies]);
       })
       .catch((err) => {
+        setIsSuccess(false);
         console.log(err);
         handleError(err);
       });
@@ -146,15 +161,30 @@ function App() {
     mainApi
       .updateUserData(newUserInfo)
       .then((data) => {
+        setisTooltipUpdateOpen(true);
+        setIsUpdate(true);
         setCurrentUser(data);
       })
       .catch((err) => {
+        setisTooltipUpdateOpen(true);
+        setIsUpdate(false);
         console.log(err);
         handleError(err);
       })
       .finally(() => {
         setIsLoading(false);
       });
+  }
+
+  function closeAllPopUps() {
+    setisTooltipOpen(false);
+    setisTooltipUpdateOpen(false);
+  }
+
+  function closeByOverlay(e) {
+    if (e.target === e.currentTarget) {
+      closeAllPopUps();
+    }
   }
 
   return (
@@ -222,6 +252,19 @@ function App() {
             />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
+
+          <ErrorTooltip
+            isOpen={isTooltipOpen}
+            onClose={closeAllPopUps}
+            isSuccess={isSuccess}
+            onCloseOverlay={closeByOverlay}
+          />
+          <ErrorTooltipUpdate
+            isOpen={isTooltipUpdateOpen}
+            onClose={closeAllPopUps}
+            isUpdate={isUpdate}
+            onCloseOverlay={closeByOverlay}
+          />
         </div>
       </div>
     </UserContext.Provider>

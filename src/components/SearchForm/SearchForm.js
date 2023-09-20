@@ -32,17 +32,14 @@ function SearchForm({ onSearchMoviesFilms, onFilterMovies, isShortMovie }) {
   }, [location]);
 
   return (
-    <form className="search-form" id="form" onSubmit={handleFormSubmit}>
+    <form className="search-form" id="register-login-form" onSubmit={handleFormSubmit}>
       <div className="search-form__container">
         <div className="search-form__wihout-checkbox">
           <input
             className="search-form__input"
             type="text"
             placeholder="Фильм"
-            required
             name="movie"
-            minLength="1"
-            maxLength="40"
             id="search-input"
             onChange={handleChangeQuery}
             value={query || ''}

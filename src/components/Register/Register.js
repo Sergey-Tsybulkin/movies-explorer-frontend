@@ -37,7 +37,7 @@ function Register({ onRegister, isLoading }) {
           type="text"
           placeholder="Введите имя"
           minLength="2"
-          maxLength="40"
+          maxLength="30"
           required
           onChange={handleInputChange}
           value={enteredValues.name || ''}

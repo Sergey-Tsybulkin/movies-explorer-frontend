@@ -15,7 +15,6 @@ function MoviesCard({
   savedMovies,
 }) {
   function onMovieClick() {
-    console.log(saved);
     if (saved) {
       onDeleteMovie(
         savedMovies.filter((movies) => movies.movieId === card.id)[0]
