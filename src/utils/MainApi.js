@@ -1,7 +1,5 @@
-/////////////////////////////////////////////////// change
-
-export const ORIGIN_URL = "http://localhost:3000";
-// export const ORIGIN_URL = 'https://api.moviepoisk.nomoredomainsicu.ru';
+// export const ORIGIN_URL = "http://localhost:3000";
+export const ORIGIN_URL = 'https://api.moviepoisk.nomoredomainsicu.ru';
 
 export const checkResponse = (res) => {
   if (res.ok) {
